@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="net.qiujuer.italker.push.activities.MainActivity">
+    tools:context=".MainActivity">
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
@@ -22,7 +22,7 @@
             android:paddingLeft="@dimen/len_4"
             android:paddingRight="@dimen/len_4">
 
-            <net.qiujuer.italker.common.widget.PortraitView
+            <net.liuhao.italker.common.widget.recycler.PortraitView
                 android:id="@+id/im_portrait"
                 android:layout_width="@dimen/len_40"
                 android:layout_height="@dimen/len_40"
@@ -87,9 +87,6 @@
         android:elevation="@dimen/len_4"
         android:outlineProvider="bounds"
         android:translationZ="@dimen/len_8"
-        app:itemIconTint="@color/text_nav"
-        app:itemTextColor="@color/text_nav"
-        app:menu="@menu/navigation_items"
         tools:targetApi="lollipop"
         tools:visibility="invisible" />
 
