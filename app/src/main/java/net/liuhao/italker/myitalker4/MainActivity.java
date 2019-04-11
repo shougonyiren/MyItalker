@@ -17,6 +17,7 @@ import com.bumptech.glide.request.target.ViewTarget;
 import net.liuhao.italker.common.app.Activity;
 import net.liuhao.italker.common.widget.recycler.PortraitView;
 import net.liuhao.italker.myitalker4.frags.main.ActiveFragment;
+import net.liuhao.italker.myitalker4.frags.main.GroupFragment;
 import net.qiujuer.genius.ui.widget.FloatActionButton;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -90,16 +91,29 @@ public class MainActivity extends Activity implements  BottomNavigationView.OnNa
      * be selected. Consider setting non-selectable items as disabled preemptively to
      * make them appear non-interactive.
      */
+    boolean
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()){
             case R.id.action_home:{
+                mTitle.setText(R.string.title_home);
                 ActiveFragment activeFragment =new ActiveFragment();
                 getSupportFragmentManager()
                         .beginTransaction()
                         .add(R.id.lay_container,activeFragment)
                         .commit();
+                break;
             }
+            case R.id.action_group:{
+                mTitle.setText(R.string.title_home);
+                ActiveFragment activeFragment =new ActiveFragment();
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.lay_container,activeFragment)
+                        .commit();
+                break;
+            }
+
         }
         mTitle.setText(item.getTitle());
         return true;//返回是否处理 true表示已处理
