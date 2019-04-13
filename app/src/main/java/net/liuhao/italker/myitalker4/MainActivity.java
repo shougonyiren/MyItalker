@@ -18,6 +18,7 @@ import net.liuhao.italker.common.app.Activity;
 import net.liuhao.italker.common.widget.recycler.PortraitView;
 import net.liuhao.italker.myitalker4.frags.main.ActiveFragment;
 import net.liuhao.italker.myitalker4.frags.main.GroupFragment;
+import net.liuhao.italker.myitalker4.helper.NavHelper;
 import net.qiujuer.genius.ui.widget.FloatActionButton;
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -42,7 +43,7 @@ public class MainActivity extends Activity implements  BottomNavigationView.OnNa
     @BindView(R.id.btn_action)
     FloatActionButton mAction;
 
-
+    private NavHelper mNavhelper;
     /**
      * MainActivity 显示的入口
      *
@@ -60,6 +61,10 @@ public class MainActivity extends Activity implements  BottomNavigationView.OnNa
     @Override
     protected void initWidget() {
         super.initWidget();
+
+        //初始化底部工具类
+        mNavhelper=new NavHelper();
+        //添加对底部按钮点击监听
         mNavigation.setOnNavigationItemSelectedListener(this);
         Glide.with(this)
                 .load(R.drawable.bg_src_morning)
@@ -91,32 +96,11 @@ public class MainActivity extends Activity implements  BottomNavigationView.OnNa
      * be selected. Consider setting non-selectable items as disabled preemptively to
      * make them appear non-interactive.
      */
-    boolean
+   // boolean
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.action_home:{
-                mTitle.setText(R.string.title_home);
-                ActiveFragment activeFragment =new ActiveFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .add(R.id.lay_container,activeFragment)
-                        .commit();
-                break;
-            }
-            case R.id.action_group:{
-                mTitle.setText(R.string.title_home);
-                ActiveFragment activeFragment =new ActiveFragment();
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .add(R.id.lay_container,activeFragment)
-                        .commit();
-                break;
-            }
-
-        }
-        mTitle.setText(item.getTitle());
-        return true;//返回是否处理 true表示已处理
+        //转接事件流到工具类中
+        return mNavhelper.performClickMenu(item.getItemId());
     }
 
     /**
