@@ -1,2 +1,2 @@
 # MyItalker4
-http://progressed.io/bar/28?title=progress
+https://camo.githubusercontent.com/3ba433e9aaff8fb8749c3fa980ff5839515057f8/687474703a2f2f70726f677265737365642e696f2f6261722f32383f7469746c653d70726f6772657373
