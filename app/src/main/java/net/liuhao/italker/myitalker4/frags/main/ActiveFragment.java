@@ -7,13 +7,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import net.liuhao.italker.common.GalleyView;
 import net.liuhao.italker.myitalker4.R;
+
+import butterknife.BindView;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ActiveFragment extends net.liuhao.italker.common.app.Fragment {
-
+    @BindView(R.id.galleyView)
+    GalleyView mGalley;
 
     public ActiveFragment() {
         // Required empty public constructor
@@ -30,4 +34,17 @@ public class ActiveFragment extends net.liuhao.italker.common.app.Fragment {
         return R.layout.fragment_active;
     }
 
+    /**
+     * 初始化数据
+     */
+    @Override
+    protected void initData() {
+        super.initData();
+        mGalley.setup(getLoaderManager(), new GalleyView.SelectedChangeListener() {
+            @Override
+            public void onSelectedCountChanged(int count) {
+
+            }
+        });
+    }
 }

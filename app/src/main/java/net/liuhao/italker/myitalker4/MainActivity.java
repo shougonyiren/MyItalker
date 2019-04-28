@@ -17,7 +17,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.ViewTarget;
 
 import net.liuhao.italker.common.app.Activity;
-import net.liuhao.italker.common.widget.recycler.PortraitView;
+import net.liuhao.italker.common.widget.PortraitView;
 import net.liuhao.italker.myitalker4.frags.main.ActiveFragment;
 import net.liuhao.italker.myitalker4.frags.main.ContactFragment;
 import net.liuhao.italker.myitalker4.frags.main.GroupFragment;

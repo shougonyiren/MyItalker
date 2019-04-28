@@ -1,4 +1,4 @@
-package net.liuhao.italker.common.widget.recycler;
+package net.liuhao.italker.common.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
